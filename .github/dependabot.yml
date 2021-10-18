@@ -6,18 +6,10 @@
 # yaml-language-server: $schema=https://json.schemastore.org/dependabot-2.0.json
 
 version: 2
-registries:
-  npm-artifactory:
-    type: npm-registry
-    url: https://artifactory.jfrog.iress.online/artifactory/api/npm/iress-npm/
-    token: ${{secrets.IRESS_ARTIFACTORY_ACCESS_TOKEN}}
-
 updates:
   - package-ecosystem: "npm"
     directory: "/"
     open-pull-requests-limit: 1
-    registries:
-      - npm-artifactory
     schedule:
       interval: daily
     labels:
