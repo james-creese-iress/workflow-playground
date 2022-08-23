@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: GH CLI
+on: pull_request_target
+
+permissions:
+  pull-requests: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GH PR VIEW
+        id: view
+        run: gh pr view --json
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
